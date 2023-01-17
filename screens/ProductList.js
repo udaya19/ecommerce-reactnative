@@ -5,14 +5,6 @@ import { getProducts } from "../services/ProductService";
 import Product from "../components/Product";
 
 function ProductList({ navigation }) {
-  const renderProduct = ({ item: product }) => {
-    <Product
-      {...product}
-      onPress={() => {
-        navigation.navigate("ProductDetails", { productId: product.id });
-      }}
-    />;
-  };
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setProducts(getProducts());
